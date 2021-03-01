@@ -41,6 +41,7 @@ const Test = () => {
         // const inputs = document.getElementsByTagName('input')
         Array.prototype.forEach.call(radioGrops, group => {
             console.log(group)
+
             // if(!input.checked) {
             //     dispatch(setUncheckedRadios())
             // }
