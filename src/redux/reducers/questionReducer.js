@@ -6,7 +6,6 @@ let initialState = {
     currentPage: 1,
     pageLimit: 10,
     isFinished: false,
-    uncheckedRadios: [],
     E: 0,
     I: 0,
     S: 0,
@@ -92,11 +91,6 @@ const questionReducer = (state = initialState, action) => {
             return {
                 ...state,
                 isFinished: action.value
-            }
-        case actionType.SET_UNCHECKED_RADIOS:
-            return {
-                ...state,
-                uncheckedRadios: [...state.uncheckedRadios, action.radio]
             }
         default:
             return state

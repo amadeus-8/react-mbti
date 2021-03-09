@@ -73,10 +73,3 @@ export const setIsFinished = (value) => {
         value
     }
 }
-
-export const setUncheckedRadios = (radio) => {
-    return {
-        type: actionType.SET_UNCHECKED_RADIOS,
-        radio
-    }
-}

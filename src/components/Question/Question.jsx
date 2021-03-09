@@ -2,16 +2,7 @@ import React from "react"
 import {useDispatch} from "react-redux"
 import {
     calculatePercentage,
-    resetScores,
-    setExtraversy,
-    setFeeling,
-    setIntroversy,
-    setIntuition,
     setIsFinished,
-    setJudging,
-    setPerception,
-    setSensing,
-    setThinking
 } from "../../redux/actions/questionAction"
 import {Box, FormControl, FormControlLabel, FormLabel, Radio, RadioGroup, Button, Grid} from "@material-ui/core"
 import {makeStyles} from "@material-ui/core"
@@ -29,50 +20,14 @@ const useStyles = makeStyles({
     }
 })
 
-const Question = ({currentQuestions, currentPage, pagesCount}) => {
+const Question = ({currentQuestions, currentPage, pagesCount, getScores}) => {
 
     const classes = useStyles()
 
     const dispatch = useDispatch()
 
-    const getScores = () => {
-        const inputs = document.getElementsByTagName('input')
-        Array.prototype.forEach.call(inputs, input => {
-            if (input.checked) {
-                switch (input.value) {
-                    case 'E':
-                        dispatch(setExtraversy())
-                        break
-                    case 'I':
-                        dispatch(setIntroversy())
-                        break
-                    case 'S':
-                        dispatch(setSensing())
-                        break
-                    case 'N':
-                        dispatch(setIntuition())
-                        break
-                    case 'T':
-                        dispatch(setThinking())
-                        break
-                    case 'F':
-                        dispatch(setFeeling())
-                        break
-                    case 'J':
-                        dispatch(setJudging())
-                        break
-                    case 'P':
-                        dispatch(setPerception())
-                        break
-                    default:
-                        break
-                }
-            }
-        })
-    }
-
     const handleClick = () => {
-        dispatch(resetScores())
+        // dispatch(resetScores())
         getScores()
         dispatch(calculatePercentage())
         dispatch(setIsFinished(true))
@@ -81,10 +36,10 @@ const Question = ({currentQuestions, currentPage, pagesCount}) => {
     return (
         <div>
             {
-                currentQuestions.map((question, index) => {
+                currentQuestions.map(question => {
                     return (
                         <Box mb="1rem"
-                             key={index}>
+                             key={question.id}>
                             <FormControl component="fieldset">
                                 <FormLabel className={classes.formLabel}
                                            component="legend">{question.title}</FormLabel>

@@ -1,4 +1,4 @@
-import React, {useEffect, useRef, useState} from "react"
+import React, {useEffect, useState} from "react"
 import {useDispatch, useSelector} from "react-redux"
 import Question from "../Question/Question"
 import Result from "../Result/Result"
@@ -8,7 +8,17 @@ import {
     getPageLimit,
     getQuestions,
 } from "../../redux/selectors/questionSelector"
-import {setCurrentPage, setUncheckedRadios} from "../../redux/actions/questionAction"
+import {
+    setCurrentPage,
+    setExtraversy,
+    setFeeling,
+    setIntroversy,
+    setIntuition,
+    setJudging,
+    setPerception,
+    setSensing,
+    setThinking
+} from "../../redux/actions/questionAction"
 import {Pagination} from "@material-ui/lab"
 import {Box, Grid, Typography} from "@material-ui/core"
 
@@ -22,7 +32,7 @@ const Test = () => {
     const isFinished = useSelector(getIsFinished)
     const dispatch = useDispatch()
 
-    let pagesCount = Math.ceil( questions.length / pageLimit)
+    let pagesCount = Math.ceil(questions.length / pageLimit)
 
     const offset = (currentPage - 1) * pageLimit
     const activeQuestions = questions.slice(offset, offset + pageLimit)
@@ -30,28 +40,68 @@ const Test = () => {
     useEffect(() => {
         const activeQuestions = questions.slice(0, pageLimit)
         setCurrentQuestions(activeQuestions)
-    },[])
+    }, [])
 
     useEffect(() => {
         setCurrentQuestions(activeQuestions)
     }, [currentPage])
 
     const checkRadios = () => {
-        const radioGrops = document.getElementsByClassName('radio-group')
-        // const inputs = document.getElementsByTagName('input')
-        Array.prototype.forEach.call(radioGrops, group => {
-            console.log(group)
+        const inputs = document.getElementsByTagName('input')
+        let checkedRadios = 0
+        let allRadios = activeQuestions.length
+        Array.prototype.forEach.call(inputs, input => {
+            if (input.checked) {
+                checkedRadios = checkedRadios + 1
+            }
+        })
+        return (checkedRadios === allRadios)
+    }
 
-            // if(!input.checked) {
-            //     dispatch(setUncheckedRadios())
-            // }
+    const getScores = () => {
+        const inputs = document.getElementsByTagName('input')
+        Array.prototype.forEach.call(inputs, input => {
+            if (input.checked) {
+                switch (input.value) {
+                    case 'E':
+                        dispatch(setExtraversy())
+                        break
+                    case 'I':
+                        dispatch(setIntroversy())
+                        break
+                    case 'S':
+                        dispatch(setSensing())
+                        break
+                    case 'N':
+                        dispatch(setIntuition())
+                        break
+                    case 'T':
+                        dispatch(setThinking())
+                        break
+                    case 'F':
+                        dispatch(setFeeling())
+                        break
+                    case 'J':
+                        dispatch(setJudging())
+                        break
+                    case 'P':
+                        dispatch(setPerception())
+                        break
+                    default:
+                        break
+                }
+            }
         })
     }
 
     const onPageChanged = (event, value) => {
-        checkRadios()
-        dispatch(setCurrentPage(value))
-        scrollToTop()
+        if(checkRadios()) {
+            getScores()
+            dispatch(setCurrentPage(value))
+            scrollToTop()
+        }
+        else
+            event.preventDefault()
     }
 
     const scrollToTop = () => {
@@ -75,7 +125,7 @@ const Test = () => {
                                         disabled={isFinished}
                                         onChange={onPageChanged}
                                         variant="outlined"
-                                        shape="rounded" />
+                                        shape="rounded"/>
                         </Grid>
                     </Grid>
                 </Box>
@@ -94,11 +144,12 @@ const Test = () => {
                         !isFinished &&
                         <Question currentQuestions={currentQuestions}
                                   currentPage={currentPage}
-                                  pagesCount={pagesCount} />
+                                  getScores={getScores}
+                                  pagesCount={pagesCount}/>
                     }
                     {
                         isFinished &&
-                        <Result />
+                        <Result/>
                     }
                 </Box>
             </main>

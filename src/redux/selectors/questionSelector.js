@@ -28,7 +28,3 @@ export const getScores = (state) => {
         P: state.questions.P,
     }
 }
-
-export const getUncheckedRadios = (state) => {
-    return state.questions.uncheckedRadios
-}

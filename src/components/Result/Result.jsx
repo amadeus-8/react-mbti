@@ -1,8 +1,9 @@
 import React, {useEffect, useState} from "react"
-import {Box, Button, LinearProgress, Typography} from "@material-ui/core"
+import {Box, Button, Grid, LinearProgress, Typography} from "@material-ui/core"
 import {useDispatch, useSelector} from "react-redux"
 import {resetScores, setCurrentPage, setIsFinished} from "../../redux/actions/questionAction"
-import {getScores} from "../../redux/selectors/questionSelector";
+import {getScores} from "../../redux/selectors/questionSelector"
+import personTypesData from "../../data/personTypes.json"
 
 const Result = () => {
 
@@ -48,9 +49,22 @@ const Result = () => {
                     <Typography variant="h4"
                                 component="h4"
                                 align="center">
-                        {personType}
+                        <span>{personType}</span>
+                        {/*<span>{personTypes[`${personType}`]}</span>*/}
                     </Typography>
                 </Box>
+            </div>
+            <div>
+                <Grid container
+                      direction="row"
+                      justify="center">
+                    <Box mr="1rem">
+                        <Button variant="outlined">Полное описание</Button>
+                    </Box>
+                    <Box>
+                        <Button variant="outlined">Перейти на сайт</Button>
+                    </Box>
+                </Grid>
             </div>
             <div>
                 {
@@ -66,13 +80,11 @@ const Result = () => {
                                     <Box width="100%"
                                          mr={1}>
                                         <LinearProgress variant="determinate"
-                                                        value={scores[key]} />
+                                                        value={scores[key]}/>
                                     </Box>
                                     <Box minWidth={35}>
                                         <Typography variant="body2"
-                                                    color="textSecondary">{`${Math.round(
-                                            scores[key],
-                                        )}%`}</Typography>
+                                                    color="textSecondary">{`${Math.round(scores[key])}%`}</Typography>
                                     </Box>
                                 </Box>
                             </div>

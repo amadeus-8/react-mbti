@@ -1,0 +1,114 @@
+{
+  "ISTJ": {
+    "title": "Инспектор",
+    "percentage": "13.7%",
+    "description": "Молчаливые и сдержанные личности, заинтересованные в безопасности и мирной жизни. ",
+    "site": "https://webtutor.beeline.kz/view_doc.html?mode=doc_type&object_id=6858130528403093452",
+    "download": "src/types/Инспектор.pdf"
+  },
+  "ISFJ": {
+    "title": "Хранитель",
+    "percentage": "12.7%",
+    "description": "Живут в конкретном и добром мире. Они искренне теплые и добрые и хотят верить в лучшее в людях. ",
+    "site": "https://webtutor.beeline.kz/view_doc.html?mode=doc_type&object_id=6858130880147969305",
+    "download": "src/types/Хранитель.pdf"
+  },
+  "INFJ": {
+    "title": "Гуманист",
+    "percentage": "1.7%",
+    "description": "Очень добрые, заботливые, глубокие и чрезвычайно интуитивные личности. ",
+    "site": "https://webtutor.beeline.kz/view_doc.html?mode=doc_type&object_id=6858131580655508814",
+    "download": "src/types/Гуманист.pdf"
+  },
+  "INTJ": {
+    "title": "Аналитик",
+    "percentage": "1.4%",
+    "description": "Живут в мире идей и стратегического планирования. Они ценят интеллект, знания и компетентность",
+    "site": "https://webtutor.beeline.kz/view_doc.html?mode=doc_type&object_id=6858131276465070804",
+    "download": "src/types/Аналитик.pdf"
+  },
+  "ISTP": {
+    "title": "Мастер",
+    "percentage": "6.4%",
+    "description": "Обладают неодолимой тягой к познанию того, как работают вещи. Они хороши в логическом анализе.",
+    "site": "https://webtutor.beeline.kz/view_doc.html?mode=doc_type&object_id=6858132062042396896",
+    "download": "src/types/Мастер.pdf"
+  },
+  "ISFP": {
+    "title": "Посредник",
+    "percentage": "6.1%",
+    "description": "Живут в мире сенсорных возможностей. Для них важно, как вещи выглядят, пахнут, звучат, осязаются и каковы они на вкус.",
+    "site": "https://webtutor.beeline.kz/view_doc.html?mode=doc_type&object_id=6858132409865089393",
+    "download": "src/types/Посредник.pdf"
+  },
+  "INFP": {
+    "title": "Романтик",
+    "percentage": "3.2%",
+    "description": "Больше остальных интуитивных чувствующих типов ориентированы на то, чтобы сделать мир лучше. ",
+    "site": "https://webtutor.beeline.kz/view_doc.html?mode=doc_type&object_id=6858133166723052570",
+    "download": "src/types/Романтик.pdf"
+  },
+  "INTP": {
+    "title": "Критик",
+    "percentage": "2.4%",
+    "description": "Живут в мире теоретических возможностей. ",
+    "site": "https://webtutor.beeline.kz/view_doc.html?mode=doc_type&object_id=6858132788755387450",
+    "download": "src/types/Критик.pdf"
+  },
+  "ESTP": {
+    "title": "Маршал",
+    "percentage": "5.8%",
+    "description": "Коммуникабельный и меткий тип. Полные энтузиазма и легко возбудимые, ESTP – «дельцы», живущие в мире действий.",
+    "site": "https://webtutor.beeline.kz/view_doc.html?mode=doc_type&object_id=6858126735248474686",
+    "download": "src/types/Маршал.pdf"
+  },
+  "ESFP": {
+    "title": "Политик",
+    "percentage": "8.7%",
+    "description": "Они любят людей и новые впечатления. Они яркие и веселые личности, которые любят быть в центре внимания.",
+    "site": "https://webtutor.beeline.kz/view_doc.html?mode=doc_type&object_id=6858123090249587796",
+    "download": "src/types/Политик.pdf"
+  },
+  "ENFP": {
+    "title": "Инициатор",
+    "percentage": "6.3%",
+    "description": "Теплые, энергичные, как правило, очень яркие и полные потенциала личности. ",
+    "site": "https://webtutor.beeline.kz/view_doc.html?mode=doc_type&object_id=6858128415373355286",
+    "download": "src/types/Инициатор.pdf"
+  },
+  "ENTP": {
+    "title": "Новатор",
+    "percentage": "2.8%",
+    "description": "Они постоянно поглощают идеи и образы ситуаций, встречающихся им в жизни.",
+    "site": "https://webtutor.beeline.kz/view_doc.html?mode=doc_type&object_id=6858127839479035133",
+    "download": "src/types/Новатор.pdf"
+  },
+  "ESTJ": {
+    "title": "Администратор",
+    "percentage": "10.4%",
+    "description": "Они живут настоящим и постоянно следят за окружающей их обстановкой, чтобы быть уверенными, что все идет гладко и систематично.",
+    "site": "https://webtutor.beeline.kz/view_doc.html?mode=doc_type&object_id=6858128832017474293",
+    "download": "src/types/Администратор.pdf"
+  },
+  "ESFJ": {
+    "title": "Энтузиаст",
+    "percentage": "12.6%",
+    "description": "Публичные личности, они любят людей и тепло интересуются ими.",
+    "site": "https://webtutor.beeline.kz/view_doc.html?mode=doc_type&object_id=6858129253446397693",
+    "download": "src/types/Энтузиаст.pdf"
+  },
+  "ENFJ": {
+    "title": "Наставник",
+    "percentage": "2.8%",
+    "description": "Личности, устремленные к людям. Они живут в мире человеческих возможностей и обладают лучшими человеческими качествами, чем другие типы. ",
+    "site": "https://webtutor.beeline.kz/view_doc.html?mode=doc_type&object_id=6858130069203482495",
+    "download": "src/types/Наставник.pdf"
+  },
+  "ENTJ": {
+    "title": "Предприниматель",
+    "percentage": "2.9%",
+    "description": "Рождены, чтобы быть лидерами.",
+    "site": "https://webtutor.beeline.kz/view_doc.html?mode=doc_type&object_id=6858129648295419212",
+    "download": "src/types/Предприниматель.pdf"
+  }
+}
