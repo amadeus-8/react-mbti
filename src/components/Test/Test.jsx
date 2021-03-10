@@ -20,7 +20,7 @@ import {
     setThinking
 } from "../../redux/actions/questionAction"
 import {Pagination} from "@material-ui/lab"
-import {Box, Grid, Typography} from "@material-ui/core"
+import {Box, Button, Grid, Typography} from "@material-ui/core"
 
 const Test = () => {
 
@@ -94,14 +94,13 @@ const Test = () => {
         })
     }
 
-    const onPageChanged = (event, value) => {
-        if(checkRadios()) {
+    const onPageChanged = (event) => {
+        // if (checkRadios()) {
             getScores()
-            dispatch(setCurrentPage(value))
+            dispatch(setCurrentPage(currentPage + 1))
             scrollToTop()
-        }
-        else
-            event.preventDefault()
+        // } else
+        //     event.preventDefault()
     }
 
     const scrollToTop = () => {
@@ -122,8 +121,7 @@ const Test = () => {
                               md={6}>
                             <Pagination count={pagesCount}
                                         page={currentPage}
-                                        disabled={isFinished}
-                                        onChange={onPageChanged}
+                                        disabled={true}
                                         variant="outlined"
                                         shape="rounded"/>
                         </Grid>
@@ -141,14 +139,25 @@ const Test = () => {
                         </Box>
                     }
                     {
-                        !isFinished &&
+                        isFinished &&
                         <Question currentQuestions={currentQuestions}
                                   currentPage={currentPage}
                                   getScores={getScores}
                                   pagesCount={pagesCount}/>
                     }
                     {
-                        isFinished &&
+                        currentPage !== pagesCount &&
+                        <Grid container
+                              direction="column"
+                              justify="center"
+                              alignItems="center">
+                            <Button variant="outlined"
+                                    color="primary"
+                                    onClick={onPageChanged}>Далее</Button>
+                        </Grid>
+                    }
+                    {
+                        !isFinished &&
                         <Result/>
                     }
                 </Box>

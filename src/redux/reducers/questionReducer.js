@@ -1,8 +1,10 @@
 import * as actionType from "../actionTypes/actionType"
 import data from "../../data/data.json"
+import personTypes from "../../data/personTypes.json"
 
 let initialState = {
     questions: data.questions,
+    personTypes: personTypes,
     currentPage: 1,
     pageLimit: 10,
     isFinished: false,

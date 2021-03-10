@@ -27,7 +27,6 @@ const Question = ({currentQuestions, currentPage, pagesCount, getScores}) => {
     const dispatch = useDispatch()
 
     const handleClick = () => {
-        // dispatch(resetScores())
         getScores()
         dispatch(calculatePercentage())
         dispatch(setIsFinished(true))

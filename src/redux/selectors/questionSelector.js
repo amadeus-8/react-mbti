@@ -28,3 +28,7 @@ export const getScores = (state) => {
         P: state.questions.P,
     }
 }
+
+export const getPersonTypes = (state) => {
+    return state.questions.personTypes
+}
