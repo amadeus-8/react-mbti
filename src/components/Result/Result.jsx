@@ -7,8 +7,8 @@ import {getPersonTypes, getScores} from "../../redux/selectors/questionSelector"
 const Result = () => {
 
     const types = {
-        E: 'Интроверсия',
-        I: 'Экстраверсия',
+        I: 'Интроверсия',
+        E: 'Экстраверсия',
         S: 'Сенсорика',
         N: 'Интуиция',
         T: 'Мышление',
@@ -32,12 +32,12 @@ const Result = () => {
 
     const downloadURI = (type) => {
         let uri
-        if(type === 'download')
+        if (type === 'download')
             uri = personTypes[personType].download
         else
             uri = personTypes[personType].site
 
-        const name ='Результат теста личности.pdf'
+        const name = 'Результат теста личности.pdf'
         let link = document.createElement("a")
         link.download = name
         link.href = uri
@@ -84,10 +84,14 @@ const Result = () => {
                       alignItems="center"
                       justify="center">
                     <Box mr="1rem" mb="1rem" justifyContent="center">
-                        <Button variant="outlined" onClick={() => {downloadURI('download')}}>Полное описание</Button>
+                        <Button variant="outlined" onClick={() => {
+                            downloadURI('download')
+                        }}>Полное описание</Button>
                     </Box>
                     <Box mb="1rem" justifyContent="center">
-                        <Button variant="outlined" onClick={() => {downloadURI()}}>Перейти на сайт</Button>
+                        <Button variant="outlined" onClick={() => {
+                            downloadURI()
+                        }}>Перейти на сайт</Button>
                     </Box>
                 </Grid>
             </div>
@@ -105,7 +109,7 @@ const Result = () => {
                                     <Box width="100%"
                                          mr={1}>
                                         <LinearProgress variant="determinate"
-                                                        value={scores[key]} />
+                                                        value={scores[key]}/>
                                     </Box>
                                     <Box minWidth={35}>
                                         <Typography variant="body2"

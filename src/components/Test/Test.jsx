@@ -95,12 +95,12 @@ const Test = () => {
     }
 
     const onPageChanged = (event) => {
-        // if (checkRadios()) {
+        if (checkRadios()) {
             getScores()
             dispatch(setCurrentPage(currentPage + 1))
             scrollToTop()
-        // } else
-        //     event.preventDefault()
+        } else
+            event.preventDefault()
     }
 
     const scrollToTop = () => {
@@ -139,7 +139,7 @@ const Test = () => {
                         </Box>
                     }
                     {
-                        isFinished &&
+                        !isFinished &&
                         <Question currentQuestions={currentQuestions}
                                   currentPage={currentPage}
                                   getScores={getScores}
@@ -157,7 +157,7 @@ const Test = () => {
                         </Grid>
                     }
                     {
-                        !isFinished &&
+                        isFinished &&
                         <Result/>
                     }
                 </Box>

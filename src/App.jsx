@@ -5,7 +5,7 @@ const App = () => {
     return (
         <div className="App">
             <Container maxWidth="md">
-                <Test />
+                <Test/>
             </Container>
         </div>
     );

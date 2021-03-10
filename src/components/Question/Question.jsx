@@ -4,7 +4,16 @@ import {
     calculatePercentage,
     setIsFinished,
 } from "../../redux/actions/questionAction"
-import {Box, FormControl, FormControlLabel, FormLabel, Radio, RadioGroup, Button, Grid} from "@material-ui/core"
+import {
+    Box,
+    FormControl,
+    FormControlLabel,
+    FormLabel,
+    Radio,
+    RadioGroup,
+    Button,
+    Grid,
+} from "@material-ui/core"
 import {makeStyles} from "@material-ui/core"
 
 const useStyles = makeStyles({
@@ -57,6 +66,7 @@ const Question = ({currentQuestions, currentPage, pagesCount, getScores}) => {
                                         })
                                     }
                                 </RadioGroup>
+                                <hr/>
                             </FormControl>
                         </Box>
                     )
