@@ -99,7 +99,8 @@ const Test = () => {
             getScores()
             dispatch(setCurrentPage(currentPage + 1))
             scrollToTop()
-        } else
+        }
+        else
             event.preventDefault()
     }
 
