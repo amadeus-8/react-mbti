@@ -62,16 +62,16 @@ const Result = () => {
                     <Typography variant="h4"
                                 component="h4"
                                 align="center">
-                        <Grid container
-                              direction="row"
-                              justify="center">
+                        <Box display="flex"
+                             direction="row"
+                             justifyContent="center">
                             <Box mr="1rem">
                                 <span>{personType}</span>
                             </Box>
                             <Box>
                                 <span>{personTypes[`${personType}`].title}</span>
                             </Box>
-                        </Grid>
+                        </Box>
                     </Typography>
                     <Typography align="center">
                         {personTypes[`${personType}`].description}
