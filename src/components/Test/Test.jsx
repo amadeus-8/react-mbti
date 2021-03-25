@@ -144,7 +144,7 @@ const Test = () => {
                         <Question currentQuestions={currentQuestions}
                                   currentPage={currentPage}
                                   getScores={getScores}
-                                  pagesCount={pagesCount}/>
+                                  pagesCount={pagesCount} />
                     }
                     {
                         currentPage !== pagesCount &&

@@ -33,7 +33,7 @@ const Result = () => {
     const downloadURI = (type) => {
         let uri
         if (type === 'download')
-            uri = personTypes[personType].download
+            uri = process.env.PUBLIC_URL + personTypes[personType].download
         else
             uri = personTypes[personType].site
 
